@@ -1,0 +1,32 @@
+// get all the code in the current file
+		let editor = vscode.window.activeTextEditor;
+		if (editor) {
+			//put the last comment in a variable text  , and all the code in a variable context
+			let text = editor.document.getText(editor.selection);
+			let contexte = editor.document.getText();
+			//call the gpt api
+			let resp = await gptCall(contexte, text);
+			//insert the response in the current file if it is not empty
+			if (resp != '') {
+				editor.edit(edit => {
+					edit.insert(editor.selection.end, resp);
+				});
+			}
+		}
+
+
+        // get all the code in the current file
+		let editor = vscode.window.activeTextEditor;
+		if (editor) {
+			//put the last comment in a variable text  , and all the code in a variable context
+			let text = editor.document.getText(editor.selection);
+			let contexte = editor.document.getText();
+			//call the gpt api
+			let resp =  await gptCall(contexte, text);
+			//insert the response in the current file if it is not empty
+			if (resp != '') {
+				editor.edit(edit => {
+					edit.insert(editor.selection.end, resp);
+				});
+			}
+		}
