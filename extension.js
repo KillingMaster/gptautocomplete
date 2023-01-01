@@ -9,8 +9,8 @@ import { ChatGPTAPIBrowser } from 'chatgpt'
 async function gptCall(context, text) {
 	// use puppeteer to bypass cloudflare (headful because of captchas)
 	const api = new ChatGPTAPIBrowser({
-		email: 'didisossou@gmail.com',
-		password: 'kabirou183',
+		email: '',
+		password: '',
 		isGoogleLogin: true
 	})
 	await api.initSession()
